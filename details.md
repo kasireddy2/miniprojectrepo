@@ -65,10 +65,10 @@ See the options with eksctl:
 * eksctl help
 Provision an EKS cluster with three worker nodes in us-east-1:
 * eksctl create cluster --name dev --version 1.16 --region us-east-1 --nodegroup-name standard-workers --node-type
-It takes 10-15 min to setup a eks cluster
-TO CHECK WHETHER CLUSTER IS CREATED OR NoT GO TO ekscluster in search AND SEARCH clusters in Amazon eks . You can also see the status.
-as there in the command three instances have to be created automatically and also three nodes have to created. 
-check nodes in eks cluster>>cluster>>dev>>compute>>nodeports
+* It takes 10-15 min to setup a eks cluster.
+* TO CHECK WHETHER CLUSTER IS CREATED OR NoT GO TO ekscluster in search AND SEARCH clusters in Amazon eks . You can also see the status.
+* As there in the command three instances have to be created automatically and also three nodes have to created. 
+* check nodes in eks cluster>>cluster>>dev>>compute>>nodeports
 
 ### Install jenkins,maven and java on JENKINS-SERVER instance.
 
@@ -107,32 +107,34 @@ click Install without restart
 
 ### Configuring the plugins 
 
-go to Jenkins Dashboard -> Manage Jenkins -> Global Tool configuration -> Add Maven
-give Name as Maven
-Unselect Install automatically -> give MAVEN_HOME as /usr/share/maven
-click Apply , wait till its saved
+* go to Jenkins Dashboard ->
+* Manage Jenkins -> Global Tool configuration -> Add Maven
+* give Name as Maven
+* Unselect Install automatically -> give MAVEN_HOME as /usr/share/maven
+* click Apply , wait till its saved
 
 ### Free style job configuration
 Lets create the first Jenkins Job , its a simple Free style job
-go to Jenkins Dashboard
-New Item -> give 01-freestyle-job
-click Freestyle project
-click OK
-under Source Code Management select Git
-for Repository URL give https://github.com/betawins/spring3-mvc-maven-xml-hello-world-1.git
-for Branch to Build give */master
-under Build
-click Add build step -> Execute command shell
+* go to Jenkins Dashboard
+* New Item -> give 01-freestyle-job
+* click Freestyle project
+* click OK
+* under Source Code Management select Git
+* for Repository URL give https://github.com/betawins/spring3-mvc-maven-xml-hello-world-1.git
+* for Branch to Build give */master
+* under Build
+* click Add build step -> Execute command shell
 type any normal command in that shell eg:echo hello world
 Apply , wait for saved
 save
  
 ### Run the free style job and check if the Artifact reached nexus repo
-go to Jenkins Dashboard -> click the newly created job 01-freestyle-job
-Build now
-under Build History -> click on latest running build
-clikc Console Output
-Jenkins will download all the dependencies to run the job
+* go to Jenkins Dashboard 
+* click the newly created job 01-freestyle-job
+* Build now
+* under Build History -> click on latest running build
+* clikc Console Output
+* Jenkins will download all the dependencies to run the job
 wait till Finished: SUCCESS
 
 
