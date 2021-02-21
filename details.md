@@ -64,7 +64,7 @@ Get the version of eksctl:
 See the options with eksctl:
 * eksctl help
 Provision an EKS cluster with three worker nodes in us-east-1:
-* eksctl create cluster --name dev --version 1.16 --region us-east-1 --nodegroup-name standard-workers --node-type
+* eksctl create cluster --name dev --version 1.16 --region us-east-1 --nodegroup-name standard-workers --node-type t3.micro --nodes 3 --nodes-min 1 --nodes-max 4 --managed
 * It takes 10-15 min to setup a eks cluster.
 * TO CHECK WHETHER CLUSTER IS CREATED OR NoT GO TO ekscluster in search AND SEARCH clusters in Amazon eks . You can also see the status.
 * As there in the command three instances have to be created automatically and also three nodes have to created. 
